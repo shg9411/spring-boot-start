@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+//통합테스트(SpringBootTest) 보다는 단위테스트(기능별)가 더 좋은 테스트라고 할 수 있다.
 class MemberServiceTest {
 
     MemberService memberService;
@@ -55,24 +56,6 @@ class MemberServiceTest {
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-
-//        try{
-//            memberService.join(member2);
-//            fail();
-//        } catch(IllegalStateException e){
-//            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-//        }
-
-
-        //then
     }
 
-
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
 }
